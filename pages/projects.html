@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link href="../src/output.css" rel="stylesheet">
+</head>
+<body class="text-slate-100">
+  <!-- Navbar (shared across pages) -->
+   <div id="navbar"></div>
+   <script>
+   fetch("../navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+    });
+    </script>
+    <!-- Auto‑injected background blobs -->
+  <div id="blobs"></div>
+  <script>
+    fetch("../blobs.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("blobs").innerHTML = html;
+      });
+  </script>
+
+  <!-- Main content -->
+  <main class="relative min-h-screen px-4 pt-24 pb-16">
+  <div class="max-w-5xl mx-auto">
+    
+    <header class="sticky top-20 z-20 text-left mb-10 space-y-2 bg-slate-900/50 backdrop-blur-2xl border border-white/10 rounded-xl px-4 py-5">
+      <h1 class="text-3xl font-semibold text-white">My Projects</h1>
+      <p class="text-gray-300 text-sm sm:text-base max-w-lg">
+        A selection of apps, websites, and prototypes I’ve worked on recently.
+      </p>
+    </header>
+
+    <!-- Projects grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/ACHyipisdFI?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+      <!-- Project card -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/10 transition transform duration-300 hover:-translate-y-1 flex flex-col h-full" data-tags="app swiftui supabase">
+        <div class="relative w-full aspect-video mb-4">
+          <!-- Thumbnail -->
+          <img 
+            src="../assets/ballina.jpg"
+            alt="Explore Ballina thumbnail"
+            class="thumb w-full h-full object-cover rounded-xl border border-white/10"
+          >
+
+          <!-- YouTube iframe -->
+          <iframe
+            class="video hidden w-full h-full object-cover rounded-xl border border-white/10"
+            src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1&mute=1"
+            allow="autoplay"
+          ></iframe>
+
+          <!-- Left Arrow -->
+          <button
+            class="carousel-left absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ◀
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            class="carousel-right absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-black/60 rounded-full border border-white/20">
+            ▶
+          </button>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Explore Ballina</h3>
+        <p class="text-sm text-gray-300 mb-4">
+          A location-aware tourism and business directory built with SwiftUI + Supabase.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">App</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">SwiftUI</span>
+          <span class="px-2 py-1 rounded-full bg-white/10 text-xs text-gray-300">Supabase</span>
+        </div>
+        <a href="#" class="text-emerald-300 text-sm hover:text-emerald-200 mt-auto inline-block">
+          View project →
+        </a>
+      </div>
+
+  </div>
+</main>
+
+</body>
+<script>
+function stopAllYouTubeVideos() {
+  document.querySelectorAll("iframe.video").forEach(iframe => {
+    iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+    iframe.classList.add("hidden");
+    iframe.parentElement.querySelector(".thumb").classList.remove("hidden");
+  });
+}
+
+document.querySelectorAll(".carousel-left").forEach(button => {
+  button.addEventListener("click", () => {
+    const container = button.parentElement;
+    const img = container.querySelector(".thumb");
+    const iframe = container.querySelector(".video");
+
+    // Go back to thumbnail
+    iframe.classList.add("hidden");
+    img.classList.remove("hidden");
+    iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+  });
+});
+
+document.querySelectorAll(".carousel-right").forEach(button => {
+  button.addEventListener("click", () => {
+    const container = button.parentElement;
+    const img = container.querySelector(".thumb");
+    const iframe = container.querySelector(".video");
+
+    // Move to video slide
+    stopAllYouTubeVideos();
+    iframe.classList.remove("hidden");
+    img.classList.add("hidden");
+    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+  });
+});
+</script>
+</html>

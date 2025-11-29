@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lotto Card UI</title>
+  <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen p-4 transition-colors duration-300">
+
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-md md:max-w-3xl p-6 md:p-8 transition-all duration-300">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+      <h1 class="text-2xl md:text-3xl font-bold text-center md:text-left mb-2 md:mb-0">Sunday Lotto</h1>
+      <span class="text-sm md:text-base text-gray-600 dark:text-gray-300 text-center md:text-right" id="countdown">
+        Draw in 02:14:37
+      </span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mb-4">
+      <button id="quickPick"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-3 rounded-lg w-full sm:w-auto transition">
+        Quick Pick
+      </button>
+      <button id="clear"
+        class="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold py-2 px-3 rounded-lg w-full sm:w-auto transition">
+        Clear
+      </button>
+    </div>
+
+    <!-- Numbers Grid -->
+    <div id="numbers" class="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-9 gap-2 sm:gap-3 mb-6"></div>
+
+    <!-- Selected Numbers -->
+    <div class="mb-4">
+      <h2 class="text-sm text-gray-500 dark:text-gray-400 mb-2">Selected Numbers:</h2>
+      <div id="selectedNumbers" class="flex flex-wrap gap-2"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-t border-gray-300 dark:border-gray-700 pt-4 gap-3">
+      <span class="text-lg md:text-xl font-semibold text-center sm:text-left" id="price">€2.00</span>
+      <button id="buy"
+        class="bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-5 rounded-lg w-full sm:w-auto transition">
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById('numbers');
+    const selectedContainer = document.getElementById('selectedNumbers');
+    const quickPickBtn = document.getElementById('quickPick');
+    const clearBtn = document.getElementById('clear');
+    const buyBtn = document.getElementById('buy');
+
+    const maxSelect = 6;
+    const totalNumbers = 47;
+    const selected = new Set();
+
+    // Create number buttons
+    for (let i = 1; i <= totalNumbers; i++) {
+  const btn = document.createElement('button');
+  btn.textContent = i;
+  btn.className =
+    "ripple w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-400 dark:border-gray-600 text-sm hover:bg-blue-600 hover:border-blue-600 focus:outline-none transition dark:hover:bg-blue-500";
+
+  // Your existing selection handler
+  btn.addEventListener('click', () => toggleNumber(i, btn));
+
+  // ✅ Ripple animation handler (Step 3)
+  btn.addEventListener("click", function () {
+    btn.classList.remove("animate");
+    void btn.offsetWidth;
+    btn.classList.add("animate");
+  });
+
+  grid.appendChild(btn);
+}
+
+    function toggleNumber(num, btn) {
+      if (selected.has(num)) {
+        selected.delete(num);
+        btn.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
+      } else if (selected.size < maxSelect) {
+        selected.add(num);
+        btn.classList.add('bg-blue-600', 'border-blue-600', 'text-white');
+      }
+      renderSelected();
+    }
+
+    function renderSelected() {
+      selectedContainer.innerHTML = '';
+      [...selected].sort((a, b) => a - b).forEach(n => {
+        const span = document.createElement('span');
+        span.className = 'bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm font-semibold';
+        span.textContent = n;
+        selectedContainer.appendChild(span);
+      });
+    }
+
+    function clearAll() {
+      selected.clear();
+      document.querySelectorAll('#numbers button').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
+      });
+      renderSelected();
+    }
+
+    function quickPick() {
+      clearAll();
+      while (selected.size < maxSelect) {
+        selected.add(Math.floor(Math.random() * totalNumbers) + 1);
+      }
+      document.querySelectorAll('#numbers button').forEach(btn => {
+        const n = parseInt(btn.textContent);
+        if (selected.has(n)) btn.classList.add('bg-blue-600', 'border-blue-600', 'text-white');
+      });
+      renderSelected();
+    }
+
+    quickPickBtn.addEventListener('click', quickPick);
+    clearBtn.addEventListener('click', clearAll);
+    buyBtn.addEventListener('click', () => {
+      if (selected.size !== maxSelect) {
+        alert(`Please select ${maxSelect} numbers.`);
+      } else {
+        alert(`You selected: ${[...selected].sort((a,b)=>a-b).join(', ')}`);
+      }
+    });
+  </script>
+
+</body>
+</html>

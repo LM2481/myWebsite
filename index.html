@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link href="../src/output.css" rel="stylesheet">
+</head>
+<body class="text-slate-100 flex flex-col min-h-screen">
+
+  <!-- Navbar (shared across pages) -->
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+    });
+</script>
+  <!-- Auto‑injected background blobs -->
+  <div id="blobs"></div>
+  <script>
+    fetch("blobs.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("blobs").innerHTML = html;
+      });
+  </script>
+
+  <!-- PAGE CONTENT -->
+  <main class="relative min-h-screen px-4 pt-28 pb-24 mx-auto max-w-4xl space-y-20">
+
+    <!-- Intro Header -->
+    <section class="text-center space-y-3">
+      <h2 class="text-2xl font-semibold text-white text-center">About Me</h2>
+      <h1 class="text-4xl sm:text-5xl font-semibold text-white">I build clean and modern web experiences.</h1>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+        I'm Michael, a developer and designer from Ireland. I specialize in crafting modern, fast, 
+            and interactive interfaces using tools like TailwindCSS, JavaScript, and component-driven layouts.
+      </p>
+    </section>
+
+
+    <!-- Who I Am -->
+    <section>
+      <div class="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-2xl px-8 py-10 shadow-[0_0_60px_rgba(15,23,42,0.9)]">
+        <div class="absolute inset-0 rounded-3xl border border-white/10 opacity-60"></div>
+        <div class="relative z-10 space-y-4">
+          <h2 class="text-2xl font-semibold text-white">Who I Am</h2>
+          <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+            I'm Michael, a developer and designer from Ireland. I specialize in crafting modern, fast, 
+            and interactive interfaces using tools like TailwindCSS, JavaScript, and component-driven layouts.
+          </p>
+          <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+            I enjoy taking an idea — even a rough one — and shaping it into a clean, usable, 
+            polished experience. My focus is on clarity, responsiveness, and a great user feel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-semibold text-white text-center">Skills & Tools</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">HTML</div>
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">CSS / Tailwind</div>
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">JavaScript</div>
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">UI / UX</div>
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">Component Design</div>
+        <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-xl py-4">Prototyping</div>
+      </div>
+    </section>
+
+
+    <!-- What I Do Cards -->
+    <section>
+      <h2 class="text-2xl font-semibold text-white text-center mb-8">What I Do</h2>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">UI Design</h3>
+          <p class="text-gray-300 text-sm">
+            Clean, modern, and visually engaging designs that focus on user clarity and experience.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">Frontend Development</h3>
+          <p class="text-gray-300 text-sm">
+            Responsive, component-driven interfaces using TailwindCSS and modern JavaScript.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-6 space-y-3">
+          <h3 class="text-xl font-semibold text-white">Prototyping</h3>
+          <p class="text-gray-300 text-sm">
+            Quickly turning ideas into polished layouts, animations, and interactive demos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Current Work -->
+    <section>
+      <div class="rounded-3xl border border-white/15 bg-white/5 backdrop-blur-2xl px-8 py-10 shadow-[0_0_60px_rgba(15,23,42,0.9)] space-y-4">
+        <h2 class="text-2xl font-semibold text-white">What I'm Working On</h2>
+        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+          I'm currently building my personal portfolio, developing reusable web components like 
+          animated backgrounds, navbars, and interactive UI elements.  
+          I'm also exploring new app concepts and sharpening my frontend workflow.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="text-center">
+      <a href="./pages/contact.html"
+        class="inline-block px-6 py-3 rounded-full text-sm font-medium border border-blue-950 bg-blue-600 text-white hover:bg-blue-950 hover:shadow-md hover:shadow-blue-600 transition-all">
+        Get in Touch
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link href="../src/output.css" rel="stylesheet">
+</head>
+<body class="text-slate-100">
+  <!-- Navbar (shared across pages) -->
+   <div id="navbar"></div>
+   <script>
+   fetch("../navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+    });
+    </script>
+      <!-- Auto‑injected background blobs -->
+  <div id="blobs"></div>
+  <script>
+    fetch("../blobs.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("blobs").innerHTML = html;
+      });
+  </script>
+
+  <!-- Main content -->
+  <main class="relative min-h-screen flex items-center justify-center px-4 pt-24 pb-16">
+    <div class="max-w-xl w-full">
+      <!-- Hybrid glass panel -->
+      <div class="relative rounded-3xl border border-white/15 bg-white/5/10 bg-linear-to-b from-slate-900/70 to-slate-900/40 backdrop-blur-2xl px-6 sm:px-8 py-8 sm:py-10 shadow-[0_0_60px_rgba(15,23,42,0.9)]">
+        <div class="absolute inset-0 rounded-3xl border border-white/10 opacity-60"></div>
+        <div class="relative z-10 space-y-6">
+          <header class="space-y-2">
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">Contact</p>
+            <h1 class="text-3xl sm:text-4xl font-semibold text-white">Let&apos;s build something together</h1>
+            <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+              Whether it&apos;s a web experience, an app concept, or a prototype you want to bring to life,
+              I&apos;m always open to interesting projects and collaborations.
+            </p>
+          </header>
+
+          <!-- Inside the glass card -->
+<div class="space-y-6 pt-4">
+  <!-- existing form... -->
+
+  <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-900/40">
+    <iframe
+      width="100%"
+      height="300"
+      style="border:0;"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2098.474917314122!2d-9.15386121329063!3d54.11470562669555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48593773606f79b5%3A0xa00c7a997319ee0!2sBallina%2C%20Co.%20Mayo!5e0!3m2!1sen!2sie!4v1764433542488!5m2!1sen!2sie">
+    </iframe>
+  </div>
+</div>
+
+          <!-- Contact options -->
+          <div class="space-y-4 text-sm text-gray-200">
+            <div class="flex flex-col gap-2">
+              <span class="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">Email</span>
+              <a href="mailto:michaelawrence@outlook.ie" class="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-200">
+                <span>michaelawrence@outlook.ie</span>
+                <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <span class="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">Social</span>
+              <div class="flex flex-wrap gap-3">
+                <a href="#" class="px-3 py-1 rounded-full text-xs border border-white/15 bg-white/5 hover:bg-white/10">GitHub</a>
+                <a href="#" class="px-3 py-1 rounded-full text-xs border border-white/15 bg-white/5 hover:bg-white/10">LinkedIn</a>
+                <a href="#" class="px-3 py-1 rounded-full text-xs border border-white/15 bg-white/5 hover:bg-white/10">Portfolio</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple message form (static) -->
+          <form class="space-y-4 pt-4" onsubmit="return false;">            
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Name</label>
+                <input id="nameField" type="text" class="w-full rounded-xl bg-slate-900/60 border border-white/10 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="Your name" />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Email</label>
+                <input id="emailField" type="email" class="w-full rounded-xl bg-slate-900/60 border border-white/10 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-300 mb-1">Message</label>
+              <textarea id="messageField" rows="4" class="w-full rounded-xl bg-slate-900/60 border border-white/10 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="Tell me a bit about your idea or project..."></textarea>
+            </div>
+            <div class="flex justify-end">
+              <button type="button" onclick="sendEmailDraft()" class="px-5 py-2.5 rounded-full text-sm font-medium border border-emerald-300/60 bg-emerald-400/10 text-emerald-200 hover:bg-emerald-400/20 hover:shadow-lg hover:shadow-emerald-400/30 transition-all">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+<script>
+  function sendEmailDraft() {
+    const name = document.getElementById("nameField").value;
+    const email = document.getElementById("emailField").value;
+    const message = document.getElementById("messageField").value;
+
+    const mailto = `mailto:michaelawrence@outlook.ie?subject=${encodeURIComponent(
+      "New Portfolio Message"
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+
+    window.location.href = mailto;
+  }
+</script>
+</body>
+</html>
