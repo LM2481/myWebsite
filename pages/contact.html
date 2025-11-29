@@ -10,7 +10,7 @@
   <!-- Navbar (shared across pages) -->
    <div id="navbar"></div>
    <script>
-   fetch("../navbar.html")
+   fetch("/myWebsite/navbar.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("navbar").innerHTML = html;
@@ -19,7 +19,7 @@
       <!-- Auto‑injected background blobs -->
   <div id="blobs"></div>
   <script>
-    fetch("../blobs.html")
+    fetch("/myWebsite/blobs.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("blobs").innerHTML = html;
